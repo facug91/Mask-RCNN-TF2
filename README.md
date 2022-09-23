@@ -1,3 +1,15 @@
+This fork has been tested with Docker images `tensorflow/tensorflow:2.9.1-gpu-jupyter` and `tensorflow/tensorflow:2.10.0-gpu-jupyter`, with some extra libraries installed. They can be installed adding a cell to the notebook as follows:
+```bash
+!apt-get update
+!apt-get install ffmpeg libsm6 libxext6  -y
+!pip install --upgrade pip
+!pip install scikit-image
+!pip install imgaug
+!pip install cython
+!pip install opencv-python
+!pip install pycocotools
+```
+
 # Mask R-CNN for Object Detection and Segmentation using TensorFlow 2.0
 
 The [Mask-RCNN-TF2](https://github.com/ahmedfgad/Mask-RCNN-TF2) project edits the original [Mask_RCNN](https://github.com/matterport/Mask_RCNN) project, which only supports TensorFlow 1.0, so that it works on TensorFlow 2.0. Based on this new project, the [Mask R-CNN](https://arxiv.org/abs/1703.06870) can be trained and tested (i.e make predictions) in TensorFlow 2.0. The Mask R-CNN model generates bounding boxes and segmentation masks for each instance of an object in the image. It's based on Feature Pyramid Network (FPN) and a ResNet101 backbone.
